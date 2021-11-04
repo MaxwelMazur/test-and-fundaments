@@ -6,3 +6,10 @@ func repeat(character string) (characterFull string) {
 	}
 	return
 }
+
+func returnNumber() (n int) {
+	for n < 5 {
+		n += 2
+	}
+	return
+}
