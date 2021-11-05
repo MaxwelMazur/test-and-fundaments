@@ -33,3 +33,21 @@ func TestSumAll(t *testing.T) {
 		t.Errorf("result %v expected %v", result, expected)
 	}
 }
+
+func TestSumAllRest(t *testing.T) {
+	t.Run("get the rest collection", func(t *testing.T) {
+		result := sumAllRest([]int{1, 2}, []int{0, 9})
+		expected := []int{2, 9}
+		if !reflect.DeepEqual(result, expected) {
+			t.Errorf("result %v expected %v", result, expected)
+		}
+	})
+
+	t.Run("get the rest collection and set zero in list empty", func(t *testing.T) {
+		result := sumAllRest([]int{}, []int{2, 12})
+		expected := []int{0, 12}
+		if !reflect.DeepEqual(result, expected) {
+			t.Errorf("result %v expected %v", result, expected)
+		}
+	})
+}
